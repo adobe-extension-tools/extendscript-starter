@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "allowJs": true,
+    "target": "es3",
+    "removeComments": true,
+    "jsx": "preserve",
+    "lib": ["es2015"]
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": []
+}

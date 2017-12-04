@@ -1,0 +1,16 @@
+{
+  "name": "extendscript-starter",
+  "version": "1.0.0",
+  "description": "Starter kit for extendscript-bundler",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc -w & es-bundler & wait",
+    "build": "tsc && es-bundler"
+  },
+  "author": "Koen Schmeets",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "extendscript-es5-shim": "^0.1.3"
+  }
+}
