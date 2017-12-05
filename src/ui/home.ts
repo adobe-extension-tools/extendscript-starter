@@ -1,13 +1,13 @@
 import { RootState } from '../reducers/index'
 import { Store } from '../core/miniRedux'
 
-const pages = ['Home', 'Preferences', 'About']
-const pageKeys = ['home', 'preferences', 'about']
+const pages = ['Home', 'About']
+const pageKeys = ['home', 'about']
 
 export default (window: Window, store: Store<RootState>) => {
   const state = store.getState()
-  const app = window.add('group', state.app.bounds)
-  const pageSelector = app.add('dropdownlist', state.app.pageSelectorBounds, pages);
+  const home = window.add('group', state.app.bounds)
+  const pageSelector = home.add('dropdownlist', state.app.pageSelectorBounds, pages);
   pageSelector.selection = 0;
   pageSelector.onChange = () => {
     const activePageIndex = typeof pageSelector.selection === 'number' ? pageSelector.selection : pageSelector.selection.index
@@ -17,8 +17,8 @@ export default (window: Window, store: Store<RootState>) => {
     })
   }
   return function onState(state: RootState) {
-    app.bounds = state.app.bounds
+    home.bounds = state.app.bounds
     pageSelector.bounds = state.app.pageSelectorBounds
-    app.visible = pageKeys.indexOf(state.router.activePage) > -1
+    home.visible = state.router.activePage === 'home'
   }
 }

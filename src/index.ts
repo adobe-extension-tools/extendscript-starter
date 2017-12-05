@@ -9,7 +9,7 @@ require('extendscript-es5-shim/Array/indexOf')
 require('extendscript-es5-shim/Array/map')
 require('extendscript-es5-shim/Object/keys')
 
-import getPanel from './ui/panel'
+import getPanel from './panel'
 import { createStore } from './core/miniRedux'
 import { reducer, RootState } from './reducers'
 import { getSettings } from './core/settings'
@@ -28,7 +28,8 @@ store.dispatch({
 })
 
 let views = [
-  require('./ui/app').default(panel, store)
+  require('./ui/home').default(panel, store),
+  require('./ui/about').default(panel, store)
 ]
 
 panel.onResize = () => {

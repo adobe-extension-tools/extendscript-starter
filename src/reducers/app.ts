@@ -36,7 +36,7 @@ export default (action: ActionTypes, state: AppState = initialState) => {
       return {
         ...state,
         bounds: action.bounds,
-        pageSelectorBounds: [5, 5, action.bounds[2] - 10, 23]
+        pageSelectorBounds: [5, 5, action.bounds[2] - 10, 35]
       }
     default:
       return state
