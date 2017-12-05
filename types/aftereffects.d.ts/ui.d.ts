@@ -412,7 +412,7 @@ declare class FlashPlayer extends _Control {
 	title: string;
 	titleLayout: _TitleLayout;
 	
-	invokePlayerFunction(fnName: string, ...args): any;
+	invokePlayerFunction(fnName: string, ...args: any[]): any;
 	loadMovie(file: File): void;
 	playMovie(rewind: boolean): void;
 	stopMovie(): void;

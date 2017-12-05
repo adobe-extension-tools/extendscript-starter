@@ -4,7 +4,7 @@
   "description": "Starter project for extendscript-bundler, uses livereload and has a \"poor mans redux\"",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && (tsc -w & es-bundler & wait)",
+    "start": "tsc || true && (tsc -w & es-bundler & wait)",
     "build": "tsc && es-bundler"
   },
   "author": "Koen Schmeets",

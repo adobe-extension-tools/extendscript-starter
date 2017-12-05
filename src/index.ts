@@ -9,12 +9,34 @@ require('extendscript-es5-shim/Array/indexOf')
 require('extendscript-es5-shim/Array/map')
 require('extendscript-es5-shim/Object/keys')
 
-import store from './store'
-import panel from './ui/panel'
+import getPanel from './ui/panel'
+import { createStore } from './core/miniRedux'
+import { reducer, RootState } from './reducers'
+import { getSettings } from './core/settings'
+import logger from './middlewares/logger'
 
-const views = [
-  require('./ui/app').default(panel(globalThis), store)
+const panel = getPanel('Test Panel')
+const store = createStore<RootState>([reducer], [logger])
+
+function cleanBounds(bounds: Bounds): Bounds {
+  return [bounds[0], bounds[1], bounds[2], bounds[3]]
+}
+
+store.dispatch({
+  type: 'SET_BOUNDS',
+  bounds: cleanBounds(panel.bounds)
+})
+
+let views = [
+  require('./ui/app').default(panel, store)
 ]
+
+panel.onResize = () => {
+  store.dispatch({
+    type: 'SET_BOUNDS',
+    bounds: cleanBounds(panel.bounds)
+  })
+}
 
 store.subscribe(state =>
   views.forEach(onState =>

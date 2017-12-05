@@ -115,10 +115,10 @@ interface Object {
     propertyIsEnumerable(v: string): boolean;
     
     /** Adds a watch function to a property, which is called when the value changes. */
-    watch(name: string, func: Function);
+    watch(name: string, func: Function): any;
     
     /** Removes the watch function of a property. */
-    unwatch(name: string);
+    unwatch(name: string): any;
 }
 
 /**
@@ -139,7 +139,7 @@ declare var Object: {
     keys(o: any): string[];
     
     /** Reports whether an object is still valid. */
-    isValid(what): boolean;
+    isValid(what: any): boolean;
 }
 
 /**
@@ -920,7 +920,7 @@ interface JSON {
       * @param replacer A function that transforms the results.
       * @param space Adds indentation, white space, and line break characters to the return-value JSON text to make it easier to read.
       */
-    stringify(value: any, replacer: (key: string, value: any) => any, space: any): string;
+    stringify(value: any, replacer: ((key: string, value: any) => any) | undefined, space: any): string;
     /**
       * Converts a JavaScript value to a JavaScript Object Notation (JSON) string.
       * @param value A JavaScript value, usually an object or array, to be converted.

@@ -1,6 +1,6 @@
 const SETTINGS_NAMESPACE = 'YourCoolExtension'
 
-const DEFAULT_SETTINGS = {
+const DEFAULT_SETTINGS: any = {
   language: 'en'
 }
 
@@ -11,19 +11,19 @@ export function getSettings() {
       app.settings.saveSetting(SETTINGS_NAMESPACE, key, DEFAULT_SETTINGS[key])
     }
   })
-  const result = {}
-  settingKeys.forEach(key => {
+  const result: any = {}
+  settingKeys.forEach((key: string) => {
     result[key] = app.settings.getSetting(SETTINGS_NAMESPACE, key)
   })
   return result
 }
 
-export function getSetting(key) {
+export function getSetting(key: string) {
   const settings = getSettings()
   return settings[key]
 }
 
-export function saveSetting(key, value) {
+export function saveSetting(key: string, value: any) {
   app.settings.saveSetting(SETTINGS_NAMESPACE, key, value)
 }
 

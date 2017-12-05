@@ -26,7 +26,7 @@ declare class ReflectionInfo {
   dataType: string;
   
   //The default value for a reflected property or method argument, or undefined if there is no default value, if the property is undefined, or if the element is a method.
-  defaultValue;
+  defaultValue: any;
   
   //Short text describing the reflected object, or undefined if no description is available.
   description: string;

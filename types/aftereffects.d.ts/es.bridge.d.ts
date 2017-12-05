@@ -57,7 +57,7 @@ declare class BridgeTalk {
   body: string;
   
   //A JavaScript object containing script-defined headers.
-  headers;
+  headers: any;
   
   //The application specifier for the sending application.
   sender: string;
@@ -84,9 +84,9 @@ declare class BridgeTalk {
   onTimeout: Function;
   
   //Sends this message to the target application.
-  send(timeoutInSecs?: number, launchParameters?): boolean;
+  send(timeoutInSecs?: number, launchParameters?: any): boolean;
   
   //When processing an unsolicited message, the static BridgeTalk onReceive method can return an intermediate result to the sender by calling this method in the received message object. It invokes the onResult callback of the original message, passing a new message object containing the specified result value.
-  sendResult(result): boolean;
+  sendResult(result: any): boolean;
 }
 

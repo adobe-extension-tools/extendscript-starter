@@ -214,7 +214,7 @@ declare class AVItem extends Item {
 /** The AVLayer object provides an interface to those layers that contain AVItem objects (composition layers, footage layers, solid layers, text layers, and sound layers). */
 declare class AVLayer extends Layer {
   /** The source item for this layer. */
-  readonly source: AVItem;
+  readonly source: any;
 
   /** When true, the layer has no expressly set name, but contains a named source. */
   readonly isNameFromSource: boolean;
@@ -426,7 +426,7 @@ declare class CompItem extends AVItem {
   openInViewer(): Viewer | null;
 
   /** Save the specific frame to a png file */
-  saveFrameToPng(time: number, file: File);
+  saveFrameToPng(time: number, file: File): void;
 }
 
 /** The FileSource object describes footage that comes from a file. */
@@ -846,31 +846,31 @@ declare class OutputModule {
   getSetting(key: string): string | number;
 
   getSettings(format?: GetSettingsFormat): {
-    'Audio Bit Depth';
-    'Audio Channels';
-    'Audio Sample Rate';
-    'Channels';
-    'Color';
-    'Crop';
-    'Crop Bottom';
-    'Crop Left';
-    'Crop Right';
-    'Crop Top';
-    'Depth';
-    'Format';
-    'Include Project Link';
-    'Include Source XMP Metadata';
-    'Lock Aspect Ratio';
-    'Output Audio';
-    'Output File Info';
-    'Post-Render Action';
-    'Resize';
-    'Resize Quality';
-    'Resize to';
-    'Starting #';
-    'Use Comp Frame Number';
-    'Use Region of Interest';
-    'Video Output';
+    'Audio Bit Depth': string;
+    'Audio Channels': string;
+    'Audio Sample Rate': string;
+    'Channels': string;
+    'Color': string;
+    'Crop': string;
+    'Crop Bottom': string;
+    'Crop Left': string;
+    'Crop Right': string;
+    'Crop Top': string;
+    'Depth': string;
+    'Format': string;
+    'Include Project Link': string;
+    'Include Source XMP Metadata': string;
+    'Lock Aspect Ratio': string;
+    'Output Audio': string;
+    'Output File Info': string;
+    'Post-Render Action': string;
+    'Resize': string;
+    'Resize Quality': string;
+    'Resize to': object;
+    'Starting #': string;
+    'Use Comp Frame Number': string;
+    'Use Region of Interest': string;
+    'Video Output': string;
   };
 
   setSetting(key: string, value: string | number): void;

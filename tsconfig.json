@@ -3,6 +3,7 @@
     "outDir": "./build",
     "allowJs": true,
     "target": "es3",
+    "strict": true,
     "removeComments": true,
     "jsx": "preserve",
     "lib": ["es2015"]

@@ -442,7 +442,7 @@ declare class File {
      * @return the new File object, or null if this object does not reference an
      * alias, or if the alias cannot be resolved.
      */
-    resolve()
+    resolve(): File | null
 
     /*
      * Opens the built-in platform-specific file-browsing dialog, in which the
@@ -502,7 +502,7 @@ declare class File {
      *
      * @return true on success.
      */
-    write(text: string, ...texts: string[])
+    write(text: string, ...texts: string[]): any
 
     /*
      * Writes the specified text to the file at the current position, and
@@ -518,7 +518,7 @@ declare class File {
      *
      * @return true on success.
      */
-    writeln (text: string, ...texts: string[])
+    writeln (text: string, ...texts: string[]): any
 }
 
 declare class Folder {
@@ -546,7 +546,7 @@ declare class Folder {
      * In Mac OS, the Folder object for the folder that contains the bundle of
      * the running application. Read only.
      */
-    static appPackage
+    static appPackage: Folder
 
     /*
      * A Folder object for the folder that contains application data for the
