@@ -12,13 +12,13 @@ cd cep-starter
 npm install
 ```
 
-# develop
+## develop
 
 ```shell
 npm start
 ```
 
-# build only
+## build only
 
 ```shell
 npm run build
