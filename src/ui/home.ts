@@ -1,5 +1,5 @@
 import { RootState } from '../reducers/index'
-import { Store } from '../core/miniRedux'
+import { Store } from 'redux'
 
 const pages = ['Home', 'About']
 const pageKeys = ['home', 'about']

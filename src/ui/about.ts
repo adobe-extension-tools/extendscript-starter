@@ -1,6 +1,6 @@
 import { RootState } from '../reducers/index'
 import { actionCreators } from '../reducers/router'
-import { Store } from '../core/miniRedux'
+import { Store } from 'redux'
 
 export default (window: Window, store: Store<RootState>) => {
   // UI

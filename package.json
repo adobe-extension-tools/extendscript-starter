@@ -10,7 +10,6 @@
   "author": "Koen Schmeets",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^8.0.56",
     "extendscript-bundler": "^0.0.3",
     "extendscript-es5-shim": "^0.1.3",
     "redux": "^3.7.2",
