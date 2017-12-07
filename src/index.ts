@@ -3,6 +3,7 @@
 
 require('./vendor/json')
 require('extendscript-es5-shim/Object/defineProperty')
+require('extendscript-es5-shim/Object/getPrototypeOf')
 require('extendscript-es5-shim/Array/forEach')
 require('extendscript-es5-shim/Array/filter')
 require('extendscript-es5-shim/Array/indexOf')
@@ -10,27 +11,36 @@ require('extendscript-es5-shim/Array/map')
 require('extendscript-es5-shim/Object/keys')
 
 import getPanel from './panel'
-import { createStore } from './core/miniRedux'
-import { reducer, RootState } from './reducers'
 import { getSettings } from './core/settings'
-import logger from './middlewares/logger'
+import { errorToPretty, cleanBounds, logToPackager } from './core/utils'
+import getStore from './core/getStore'
 
+const store = getStore()
 const panel = getPanel('Test Panel')
-const store = createStore<RootState>([reducer], [logger])
-
-function cleanBounds(bounds: Bounds): Bounds {
-  return [bounds[0], bounds[1], bounds[2], bounds[3]]
-}
-
-store.dispatch({
-  type: 'SET_BOUNDS',
-  bounds: cleanBounds(panel.bounds)
-})
 
 let views = [
   require('./ui/home').default(panel, store),
   require('./ui/about').default(panel, store)
 ]
+
+store.subscribe(() => {
+  try {
+    const state = store.getState()
+    views.forEach(onState =>
+      onState(state)
+    )
+  } catch (err) {
+    $.writeln(JSON.stringify(errorToPretty(err)))
+    const prettyError = errorToPretty(err)
+    prettyError.type = '__ERROR__'
+    logToPackager(prettyError)
+  }
+})
+
+store.dispatch({
+  type: 'SET_BOUNDS',
+  bounds: cleanBounds(panel.bounds)
+})
 
 panel.onResize = () => {
   store.dispatch({
@@ -38,9 +48,3 @@ panel.onResize = () => {
     bounds: cleanBounds(panel.bounds)
   })
 }
-
-store.subscribe(state =>
-  views.forEach(onState =>
-    onState(state)
-  )
-)

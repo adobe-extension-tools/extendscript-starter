@@ -19,6 +19,7 @@ export default (window: Window, store: Store<RootState>) => {
   return function onState(state: RootState) {
     home.bounds = state.app.bounds
     pageSelector.bounds = state.app.pageSelectorBounds
+    pageSelector.selection = pageKeys.indexOf(state.router.activePage)
     home.visible = state.router.activePage === 'home'
   }
 }

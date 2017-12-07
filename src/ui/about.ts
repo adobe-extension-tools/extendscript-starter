@@ -11,7 +11,7 @@ export default (window: Window, store: Store<RootState>) => {
     multiline: true,
     scrolling: true
   })
-  
+ 
   // UI HANDLERS
   backButton.onClick = () =>
     store.dispatch(actionCreators.navigateBack())

@@ -1,3 +1,5 @@
+import { Action, Reducer } from 'redux'
+
 export interface AppState {
   readonly bounds: Bounds;
   readonly pageSelectorBounds: Bounds;
@@ -8,13 +10,13 @@ const initialState: AppState = {
   pageSelectorBounds: [0, 0, 0, 0]
 }
 
-enum TypeKeys {
+export enum TypeKeys {
   SET_BOUNDS = 'SET_BOUNDS'
 }
 
-export interface SetBoundsAction {
-  type: TypeKeys.SET_BOUNDS,
-  bounds: Bounds
+export interface SetBoundsAction extends Action {
+  readonly type: TypeKeys.SET_BOUNDS,
+  readonly bounds: Bounds
 }
 
 export type ActionTypes = SetBoundsAction
@@ -30,7 +32,7 @@ export const actionCreators = {
 
 export type AppActionCreators = typeof actionCreators
 
-export default (action: ActionTypes, state: AppState = initialState) => {
+export const reducer: Reducer<AppState> = (state: AppState = initialState, action: ActionTypes) => {
   switch (action.type) {
     case TypeKeys.SET_BOUNDS:
       return {

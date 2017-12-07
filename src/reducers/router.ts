@@ -1,3 +1,5 @@
+import { Action } from 'redux'
+
 export interface RouterState {
   readonly activePage: string;
   readonly lastPage: string | null;
@@ -13,12 +15,12 @@ enum TypeKeys {
   NAVIGATE_BACK = 'NAVIGATE_BACK'
 }
 
-export interface ShowPageAction {
+export interface ShowPageAction extends Action {
   type: TypeKeys.SHOW_PAGE,
   page: string
 }
 
-export interface NavigateBackAction {
+export interface NavigateBackAction extends Action {
   type: TypeKeys.NAVIGATE_BACK
 }
 
@@ -40,7 +42,7 @@ export const actionCreators = {
 
 export type AppActionCreators = typeof actionCreators
 
-export default (action: ActionTypes, state: RouterState = initialState) => {
+export const reducer: Reducer<RouterState> = (state: RouterState = initialState, action: ActionTypes) => {
   switch (action.type) {
     case TypeKeys.SHOW_PAGE:
       return {

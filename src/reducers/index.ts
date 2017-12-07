@@ -1,6 +1,6 @@
-import app, { AppState } from './app'
-import router, { RouterState } from './router'
-import { combineReducers, Reducer } from '../core/miniRedux'
+import { reducer as appReducer, AppState } from './app'
+import { reducer as routerReducer, RouterState } from './router'
+import { combineReducers, Reducer } from 'redux'
 
 export interface RootState {
   readonly app: AppState;
@@ -8,6 +8,6 @@ export interface RootState {
 }
 
 export const reducer: Reducer<RootState> = combineReducers({
-  app,
-  router
+  app: appReducer,
+  router: routerReducer
 })
