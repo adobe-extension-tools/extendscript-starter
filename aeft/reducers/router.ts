@@ -53,7 +53,7 @@ export const reducer: Reducer<RouterState> = (state: RouterState = initialState,
     case TypeKeys.NAVIGATE_BACK:
       return {
         ...state,
-        activePage: state.lastPage,
+        activePage: state.lastPage || '',
         lastPage: null
       }
     default:

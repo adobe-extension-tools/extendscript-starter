@@ -6,8 +6,11 @@
 
 ## install
 
+**Note: the types for adobe are added as a submodule, you have to clone recursively as shown below**
+This is done so you can easily create a pull request for improvements you might make to them.
+
 ```shell
-git clone git@github.com:adobe-extension-tools/extendscript-starter.git
+git clone --recursive git@github.com:adobe-extension-tools/extendscript-starter.git
 cd cep-starter
 npm install
 ```

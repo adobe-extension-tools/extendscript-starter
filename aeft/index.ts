@@ -1,4 +1,3 @@
-/// <reference path="../types/aftereffects.d.ts/ae.d.ts" />
 /// <reference path="./index.d.ts" />
 
 // load shims

@@ -1,0 +1,3 @@
+[submodule "types-for-adobe"]
+	path = types-for-adobe
+	url = https://github.com/pravdomil/types-for-adobe.git

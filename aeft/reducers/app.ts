@@ -1,4 +1,4 @@
-import { Action, Reducer } from 'redux'
+import { AnyAction, Action, Reducer } from 'redux'
 
 export interface AppState {
   readonly bounds: Bounds;
@@ -32,7 +32,7 @@ export const actionCreators = {
 
 export type AppActionCreators = typeof actionCreators
 
-export const reducer: Reducer<AppState> = (state: AppState = initialState, action: ActionTypes) => {
+export const reducer: Reducer<AppState> = (state: AppState = initialState, action: AnyAction) => {
   switch (action.type) {
     case TypeKeys.SET_BOUNDS:
       return {

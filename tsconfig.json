@@ -6,10 +6,12 @@
     "strict": true,
     "removeComments": true,
     "jsx": "preserve",
-    "lib": ["es2015"]
+    "lib": ["es2015"],
+    "typeRoots": ["types-for-adobe"],
+    "types": ["AfterEffects/2017"]
   },
   "include": [
-    "./src/**/*"
+    "./aeft/**/*"
   ],
   "exclude": []
 }
