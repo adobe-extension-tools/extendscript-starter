@@ -70,6 +70,17 @@ ${bodyStr}`
   }
 }
 
+export function catchErrors(cb: () => void) {
+  try {
+    cb()
+  } catch (err) {
+    $.writeln(JSON.stringify(errorToPretty(err), undefined, 2))
+    const prettyError = errorToPretty(err)
+    prettyError.type = '__ERROR__'
+    logToPackager(prettyError)
+  }
+}
+
 export function logToPackager(message: any) {
   return postJson(`localhost:${process.env.LOG_SERVER_PORT}`, '/log', message)
 }
