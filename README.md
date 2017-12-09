@@ -16,7 +16,7 @@ For a more detailed explaination, see [under the hood](#under-the-hood)
 - [Installing](#installing)
 - [Developing](#developing)
 - [Under the hood](#under-the-hood)
-
+- [Credits](#credits)
 
 # Requirements
 
