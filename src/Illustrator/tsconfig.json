@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "../../build/ilst",
+    "allowJs": true,
+    "target": "es3",
+    "strict": true,
+    "removeComments": true,
+    "jsx": "preserve",
+    "noLib": true,
+    "typeRoots": [
+    //  "../../types-for-adobe",
+      "../../node_modules/types-for-adobe"
+    ],
+    "types": ["Illustrator/2015.3", "ScriptUI"]
+  },
+  "include": [
+    "./**/*"
+  ],
+  "exclude": []
+}
