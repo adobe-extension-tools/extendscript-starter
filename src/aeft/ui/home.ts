@@ -4,7 +4,7 @@ import { Store } from 'redux'
 const pages = ['Home', 'About']
 const pageKeys = ['home', 'about']
 
-export default (window: Window, store: Store<RootState>) => {
+export default (window: Window | Panel, store: Store<RootState>) => {
   const state = store.getState()
   const home = window.add('group', state.app.bounds)
   const pageSelector = home.add('dropdownlist', state.app.pageSelectorBounds, pages);

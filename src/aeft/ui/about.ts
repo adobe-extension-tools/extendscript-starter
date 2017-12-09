@@ -2,7 +2,7 @@ import { RootState } from '../reducers/index'
 import { actionCreators } from '../reducers/router'
 import { Store } from 'redux'
 
-export default (window: Window, store: Store<RootState>) => {
+export default (window: Window | Panel, store: Store<RootState>) => {
   // UI
   const state = store.getState()
   const about = window.add('group', state.app.bounds)

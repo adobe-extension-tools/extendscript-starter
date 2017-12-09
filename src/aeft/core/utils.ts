@@ -1,6 +1,8 @@
 interface ExtendScriptError extends Error {
   source: string;
   line: number;
+  name: string;
+  message: string;
 }
 
 export function errorToPretty(err: ExtendScriptError): any {
