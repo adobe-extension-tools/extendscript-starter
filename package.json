@@ -4,13 +4,13 @@
   "description": "Starter project for extendscript-bundler, uses livereload and has a \"poor mans redux\"",
   "main": "index.js",
   "scripts": {
-    "start": "extendscript-bundler start",
+    "start": "extendscript-bundler watch",
     "build": "extendscript-bundler build"
   },
   "author": "Koen Schmeets",
   "license": "MIT",
   "devDependencies": {
-    "extendscript-bundler": "^0.0.4",
+    "extendscript-bundler": "^0.0.5",
     "extendscript-es5-shim": "^0.1.3",
     "redux": "^3.7.2",
     "typescript": "^2.6.2"

@@ -8,7 +8,7 @@
     "jsx": "preserve",
     "noLib": true,
     "typeRoots": ["../../types-for-adobe"],
-    "types": ["AfterEffects/2017"]
+    "types": ["AfterEffects/2018", "ScriptUI"]
   },
   "include": [
     "./**/*"
