@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
-    "outDir": "./build",
+    "outDir": "../../build/aeft",
     "allowJs": true,
     "target": "es3",
     "strict": true,
     "removeComments": true,
     "jsx": "preserve",
-    "lib": ["es2015"],
-    "typeRoots": ["types-for-adobe"],
+    "noLib": true,
+    "typeRoots": ["../../types-for-adobe"],
     "types": ["AfterEffects/2017"]
   },
   "include": [
-    "./aeft/**/*"
+    "./**/*"
   ],
   "exclude": []
 }
