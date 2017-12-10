@@ -7,9 +7,9 @@ export default function LoggerMiddleware(logImplementation: any): Middleware {
     (action: any): any => {
       next(action)
       const state: any = store.getState()
-      logImplementation($.writeln(JSON.stringify({
+      logImplementation(JSON.stringify({
         action,
         state: store.getState()
-      })))
+      }))
     }
 }
