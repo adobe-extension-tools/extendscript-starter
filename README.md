@@ -24,6 +24,10 @@ For a more detailed explaination, see [under the hood](#under-the-hood)
 
 # Installing
 
+For the lazy, watch a video:
+
+[![Installation instructions video image](http://img.youtube.com/vi/eAGcxVa5BiQ/0.jpg)](http://www.youtube.com/watch?v=eAGcxVa5BiQ "Installation instructions video")
+
 ```shell
 git clone git@github.com:adobe-extension-tools/extendscript-starter.git
 cd cep-starter
