@@ -26,7 +26,7 @@ For a more detailed explaination, see [under the hood](#under-the-hood)
 
 ```shell
 git clone git@github.com:adobe-extension-tools/extendscript-starter.git
-cd cep-starter
+cd extendscript-starter
 npm install
 ```
 
