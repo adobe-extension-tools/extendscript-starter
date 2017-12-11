@@ -30,7 +30,7 @@ For the lazy, watch a video:
 
 ```shell
 git clone git@github.com:adobe-extension-tools/extendscript-starter.git
-cd cep-starter
+cd extendscript-starter
 npm install
 ```
 
