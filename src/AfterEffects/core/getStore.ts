@@ -7,7 +7,8 @@ export default () => {
   const store = createStore<RootState>(
     reducer,
     applyMiddleware(
-      LoggerMiddleware((...args: string[]) => $.writeln(args.join(', ')))
+      // LoggerMiddleware((...args: string[]) => $.writeln(args.join(', ')))
+      LoggerMiddleware((...args: string[]) => logToPackager(args.join(', ')))
     )
   )
   return store

@@ -10,7 +10,7 @@
   "author": "Koen Schmeets",
   "license": "MIT",
   "devDependencies": {
-    "extendscript-bundler": "^0.0.5",
+    "extendscript-bundler": "^0.0.6",
     "extendscript-es5-shim-ts": "^0.0.1",
     "redux": "^3.7.2",
     "types-for-adobe": "git+https://github.com/vespakoen/types-for-adobe.git#scriptui-fixes",

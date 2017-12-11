@@ -15,7 +15,7 @@ catchErrors(() => {
   const store = getStore()
   const panel = getPanel('Test Panel')
 
-  let views = [
+  const views = [
     home(panel, store),
     about(panel, store)
   ]
