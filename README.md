@@ -37,21 +37,30 @@ To get live reload functionality you first have to install the "Dev Connect" ext
 Download the `.pkg` for macOS or `.exe` for Windows.
 If you have trouble installing any of these, download the `.zxp` file and use a third party utility like [ZXPInstaller](http://zxpinstaller.com) to install it.
 
-Now open the application you are building the extension for and open "Dev Connect" by clicking to "Window -> Extensions -> Dev Connect"
-
 ## Configure
 
 Open the `extendscript-config.js` file in the root of the project and uncomment the configuration for the application you want to target.
 
 # Developing
 
-Open the application and load your script, after this, start the bundler:
+First, build the script so you can open it in the application (you only have to do this once):
+
+```shell
+npm run build
+```
+
+Now open the application you are building the extension for and open "Dev Connect" by clicking to "Window -> Extensions -> Dev Connect", after, start the ExtendScript extension, the default name is "ExtendScript Starter".
+It's location in the menu differs per application.
+
+For After Effects: "Window -> ExtendScript Starter"
+
+Now start the bundler in "live" mode:
 
 ```shell
 npm start
 ```
 
-Happy coding!
+And start coding, have fun!
 
 ## Build only
 
