@@ -11,7 +11,7 @@
     //  "../../types-for-adobe",
       "../../node_modules/types-for-adobe"
     ],
-    "types": ["InDesign/2018", "ScriptUI"]
+    "types": ["InDesign/2018"]
   },
   "include": [
     "./**/*"

@@ -11,7 +11,7 @@
     //  "../../types-for-adobe",
       "../../node_modules/types-for-adobe"
     ],
-    "types": ["JavaScript", "ScriptUI"]
+    "types": ["Illustrator/2015.3"]
   },
   "include": [
     "./**/*"

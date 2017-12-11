@@ -11,7 +11,7 @@
     //  "../../types-for-adobe",
       "../../node_modules/types-for-adobe"
     ],
-    "types": ["Photoshop/2015.5", "ScriptUI"]
+    "types": ["Photoshop/2015.5"]
   },
   "include": [
     "./**/*"

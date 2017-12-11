@@ -13,7 +13,7 @@
     "extendscript-bundler": "^0.0.5",
     "extendscript-es5-shim-ts": "^0.0.1",
     "redux": "^3.7.2",
-    "types-for-adobe": "git+https://github.com/adobe-extension-tools/types-for-adobe.git#master",
+    "types-for-adobe": "git+https://github.com/vespakoen/types-for-adobe.git#scriptui-fixes",
     "typescript": "^2.6.2"
   },
   "dependencies": {}
