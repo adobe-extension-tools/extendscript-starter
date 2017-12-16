@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "extendscript-bundler watch",
-    "build": "extendscript-bundler build"
+    "build": "extendscript-bundler build",
+    "test": "tsc -p src/AfterEffects/tsconfig.json; tsc -p src/Audition/tsconfig.json; tsc -p src/Illustrator/tsconfig.json; tsc -p src/InDesign/tsconfig.json; tsc -p src/Photoshop/tsconfig.json; tsc -p src/Premiere/tsconfig.json; tsc -p src/ScriptUI/tsconfig.json"
   },
   "author": "Koen Schmeets",
   "license": "MIT",
