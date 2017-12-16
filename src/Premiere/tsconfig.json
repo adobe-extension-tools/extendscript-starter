@@ -11,7 +11,7 @@
     //  "../../types-for-adobe",
       "../../node_modules/types-for-adobe"
     ],
-    "types": ["PremierePro/2018"]
+    "types": ["Premiere/2018"]
   },
   "include": [
     "./**/*"
