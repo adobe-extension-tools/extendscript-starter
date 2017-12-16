@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: node:9.2.0-alpine
+    image: node:9.2.0
     commands:
       - npm install
       - npm run test
